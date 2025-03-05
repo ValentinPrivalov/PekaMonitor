@@ -1,0 +1,60 @@
+﻿<Window x:Class="PekaMonitor.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PekaMonitor"
+        mc:Ignorable="d"
+        xmlns:oxy="http://oxyplot.org/wpf"
+        Title="PekaMonitor" Height="800" Width="800"
+        Background="#1A2533">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        
+        <!-- CPU -->
+        <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Foreground="White" FontSize="14" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0">
+            <Run Text="CPU - "/>
+            <Run x:Name="CpuName" Text="cpuName" FontWeight="Bold"/>
+            <Run Text=", "/>
+            <Run Text="MotherBoard - "/>
+            <Run x:Name="MotherBoardName" Text="motherboardName" FontWeight="Bold"/>
+        </TextBlock>
+        <oxy:PlotView x:Name="CpuLoadView" Grid.Row="1" Grid.Column="0" Margin="0" Background="#1A2533" />
+        <oxy:PlotView x:Name="CpuTempView" Grid.Row="1" Grid.Column="1" Margin="0" Background="#1A2533" />
+        <oxy:PlotView x:Name="CpuFanView" Grid.Row="1" Grid.Column="2" Margin="0" Background="#1A2533" />
+        <oxy:PlotView x:Name="MemoryLoadView" Grid.Row="2" Grid.Column="0" Margin="0" Background="#1A2533" />
+        <oxy:PlotView x:Name="CpuTDPView" Grid.Row="2" Grid.Column="1" Margin="0" Background="#1A2533" />
+        
+        <!-- GPU -->
+        <TextBlock Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" Foreground="White" FontSize="14" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0">
+            <Run Text="GPU - "/>
+            <Run x:Name="GpuName" Text="gpuName" FontWeight="Bold"/>
+        </TextBlock>
+        <oxy:PlotView x:Name="GpuLoadView" Grid.Row="4" Grid.Column="0" Margin="0" Background="#1A2533" />
+        <oxy:PlotView x:Name="GpuTempView" Grid.Row="4" Grid.Column="1" Margin="0" Background="#1A2533" />
+        <oxy:PlotView x:Name="GpuFanView" Grid.Row="4" Grid.Column="2" Margin="0" Background="#1A2533" />
+        <oxy:PlotView x:Name="GpuMemoryLoadView" Grid.Row="5" Grid.Column="0" Margin="0" Background="#1A2533" />
+        <oxy:PlotView x:Name="GpuTDPView" Grid.Row="5" Grid.Column="1" Margin="0" Background="#1A2533" />
+        
+        <!-- Storage -->
+        <TextBlock Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" Foreground="White" FontSize="14" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0">
+            <Run Text="Storage - "/>
+            <Run x:Name="Storage1Name" Text="storage1Name" FontWeight="Bold"/>
+        </TextBlock>
+        <oxy:PlotView x:Name="Storage1TempView" Grid.Row="7" Grid.Column="0" Margin="0" Background="#1A2533" />
+    </Grid>
+</Window>
